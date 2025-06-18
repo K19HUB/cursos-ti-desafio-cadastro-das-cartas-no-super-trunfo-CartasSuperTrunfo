@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 // Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
+// Tema 2 - calculo da densidade populacional e calculo do pib per capita.
+// Este código inicial serve como base para a inplementação de um sistema capaz de calcular a desidade populacional e o pib per capita.
 // Siga os comentários para implementar cada parte do desafio.
 
 
@@ -20,6 +20,9 @@ int main() {
     float pib1;
     int pontos_turisticos1;
 
+    float densidade_populacional1;
+    float pib_per_capita1;
+
     //carta 2
     char cartNa2;
     char estado2;
@@ -29,12 +32,16 @@ int main() {
     float area_cidade2;
     float pib2;
     int pontos_turisticos2;
+
+    float densidade_populacional2;
+    float pib_per_capita2;
+
     
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
 
-     //coleta de dados da carta 1
+    //coleta de dados da carta 1
     printf("carta 1 \n");
 
     printf("escolha um estado de a-h :\n");
@@ -57,6 +64,7 @@ int main() {
     
     printf("digite quantos pontos turisticos existem na cidade :\n\n");
     scanf("%d",&pontos_turisticos1);
+
 
 
     //coleta de dados da Carta 2 
@@ -83,6 +91,26 @@ int main() {
     printf("digite quantos pontos turisticos existem na cidade :\n\n");
     scanf("%d",&pontos_turisticos2);
 
+
+
+    //calculo necessario para descobrir a densiadade populacional e o pib per capita de ambas as cartas:
+    //calculo da densidade populacional da carta 1
+    densidade_populacional1 = numero_habitantes1 / area_cidade1 ;
+
+    //calcular o PIB per capita da carta 1
+    pib_per_capita1 =  pib1 / numero_habitantes1 ; 
+                // o PIB é float e o número de habitantes é int 
+                //fazendo a divisão o resultado saira em float
+
+    //calculo da densidade populacional da carta 2
+    densidade_populacional2 = numero_habitantes2 / area_cidade2 ;
+
+    //calcular o PIB per capita da carta 2
+    pib_per_capita2 =  pib2 / numero_habitantes2 ; 
+                 // o PIB é float e o número de habitantes é int 
+                 //fazendo a divisão o resultado saira em float
+
+
     
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
@@ -98,6 +126,10 @@ int main() {
     printf("PIB :%.2f milhões de reais\n",pib1);
     printf("Números de pontos turísticos :%d\n\n",pontos_turisticos1);
 
+    printf("Densidade populacional: %.2f hab/km² \n",densidade_populacional1);
+    printf("PIB per capita: %.2f reais  \n\n",pib_per_capita1);
+
+
     //exibir todos os dados da carta (2)
     printf("Carta 2 \n\n");
     printf("Estado : %c\n",estado2);
@@ -107,6 +139,10 @@ int main() {
     printf("Área :%.2f km²\n",area_cidade2);
     printf("PIB :%.2f milhões de reais\n",pib2);
     printf("Números de pontos turísticos :%d\n",pontos_turisticos2);
+
+    printf("Densidade populacional: %.2f hab/km² \n",densidade_populacional2);
+    printf("PIB per capita: %.2f reais \n\n",pib_per_capita2);
+
 
 
 
