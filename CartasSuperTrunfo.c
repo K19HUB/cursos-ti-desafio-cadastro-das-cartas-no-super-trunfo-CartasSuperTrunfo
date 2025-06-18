@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 // Desafio Super Trunfo - Países
-// Tema 2 - calculo da densidade populacional e calculo do pib per capita.
-// Este código inicial serve como base para a inplementação de um sistema capaz de calcular a desidade populacional e o pib per capita.
+// Tema 3 - calcular super poder
+// Este código inicial serve como base para comparar as informações dos atributos e descobrir qual carta ganhou.
 // Siga os comentários para implementar cada parte do desafio.
 
 
@@ -142,6 +142,25 @@ int main() {
 
     printf("Densidade populacional: %.2f hab/km² \n",densidade_populacional2);
     printf("PIB per capita: %.2f reais \n\n",pib_per_capita2);
+
+
+    
+    // calculando super poder :
+    //esse codigo serve para descobrir qual carta ganha, atravez de um sistema de pontuação  onde quem tem mais pontos ganha .
+    float super_poder1 = numero_habitantes1 + area_cidade1 + pib1 + pontos_turisticos1 + pib_per_capita1 + densidade_populacional1;
+    float super_poder2 = numero_habitantes2 + area_cidade2 + pib2 + pontos_turisticos2 + pib_per_capita2 + densidade_populacional2;
+    
+    //comparação das cartas :
+    //compara o atributo x da carta 1 e o atributo y da carta 2.
+    printf("  Comparação das cartas    \n\n");
+    printf("População: Carta 1 venceu (%d)\n", numero_habitantes1 > numero_habitantes2 ? 1:0);
+    printf("Área: Carta 1 venceu (%d)\n", area_cidade1 > area_cidade2 ? 1:0);
+    printf("PIB: carta 1 venceu (%d)\n",pib1 > pib2 ? 1 : 0);
+    printf("Pontos turísticos: carta 1 venceu (%d)\n",pontos_turisticos1>pontos_turisticos2 ? 1 : 0);
+    printf("Densidade populacional: carta 2 venceu (%d)\n",densidade_populacional1 > densidade_populacional2 ? 1 : 0);
+    printf("PIB per capita :carta 1 venceu (%d)\n",pib_per_capita1>pib_per_capita2 ? 1 : 0);
+    printf("Super poder: carta 1 venceu(%d)\n",super_poder1>super_poder2 ? 1 : 0);
+
 
 
 
